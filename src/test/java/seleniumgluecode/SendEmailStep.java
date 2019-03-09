@@ -6,8 +6,14 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+
+
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class SendEmailStep {
@@ -25,38 +31,29 @@ public class SendEmailStep {
     // user A scenario
 
     @Given("userA is on homepage")
-    public void usera_is_on_homepage() {
-        System.setProperty("webdriver.chrome.driver", "/Users/jhu69/Desktop/Winter_2019/ECSE_428/CucumberAgileStoryTest/chromedriver");
+    public void usera_is_on_homepage() throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "/Users/antoine/git/ECSE428CucumberAutomatedTests/CucumberAgileStoryTest/chromedriver");
         driver = new ChromeDriver();
-        driver.get("https://www.gmail.com");
+        driver.navigate().to("https://mail.google.com/");
     }
 
     @When("userA navigates to login page")
     public void usera_navigates_to_login_page() {
-        //driver.findElement(By.linkText("Sign in")).click();
+       // driver.findElement(By.linkText("Sign in")).click();
     }
 
     @And("userA enters username and password")
-    public void usera_enters_username_and_password() {
+    public void usera_enters_username_and_password() throws InterruptedException {
+        //set the email
+        driver.findElement(By.id("identifierId")).sendKeys("jochampion17@gmail.com");
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/content/span")).click();  // Click on next
+        Thread.sleep(1000);  //wait needed here To get the password page.
 
 
-        driver.findElement(By.id("identifierId")).sendKeys("jackhu696@gmail.com");
-        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-        driver.findElement(By.id("identifierNext")).click();
-        driver.findElement(By.id("password")).sendKeys("Escalation69");
-        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-        driver.findElement(By.id("passwordNext")).click();
-
-
-
-
-        driver.findElement(By.id("i0116")).sendKeys("jingxujaster@hotmail.com");
-        driver.findElement(By.id("idSIButton9")).click();
-        driver.findElement(By.id("i0118")).sendKeys("escalation13");
-        driver.findElement(By.id("idSIButton9")).submit();
-        // seems like there is a bug in selenium so have to do this twice to login
-        driver.findElement(By.id("i0118")).sendKeys("escalation13");
-        driver.findElement(By.id("idSIButton9")).submit();
+        //set the password
+        driver.findElement(By.xpath("//*[@id=\"password\"]/div[1]/div/div[1]/input")).sendKeys("ecse428!");  // click on next
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/content")).click();  //If your page redirect to google security page.
+        Thread.sleep(2000);
     }
 
     @Then("userA is logged into email homepage")
@@ -66,13 +63,34 @@ public class SendEmailStep {
 
     @When("userA clicks on New message")
     public void usera_clicks_on_New_message() {
-        //driver.findElement(By.id("id__5")).click();
+        //click on new message
+        driver.findElement(By.xpath("/html/body/div[7]/div[3]/div/div[2]/div[1]/div[1]/div[1]/div[2]/div/div/div/div[1]/div/div")).click();
+
     }
 
     @And("userA enters a desired recipient")
-    public void usera_enters_a_desired_recipient() {
-        driver.findElement(By.name("input.ms-BasePicker-input.pickerInput_269bfa71")).sendKeys("jingxujaster@hotmail.com");
+    public void usera_enters_a_desired_recipient() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, 20);   // implement wait here to load all data.
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("to")));
+        //set recipient email
+        driver.findElement(By.name("to")).sendKeys("jochampion17@gmail.com");
+
+        //set message body
+        driver.findElement(By.id(":9c")).click();
+        driver.findElement(By.id(":9c")).sendKeys("Hey! I have included an image attachment. ");
+
+        //add an attachment
+        driver.findElement(By.id(":9p")).click();
+
+        //click on send email
+        driver.findElement(By.id(":7x")).click();
+//        Thread.sleep(8000);  // Apply wait for sending mail
+//        driver.close();
+
+
     }
+
+
 
     @And("userA clicks on attach")
     public void usera_clicks_on_attach() {
