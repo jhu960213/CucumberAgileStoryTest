@@ -86,7 +86,10 @@ public class SendEmailStep {
                 .until(ExpectedConditions.elementToBeClickable(By.name("to")));
         btn.sendKeys("jochampion17@gmail.com" + Keys.ENTER);
         System.out.println("Email recipient set");
+    }
 
+    @And("userA enters an email body text")
+    public void usera_enters_an_email_body_text(){
         //set message body
         System.out.println("Attempting to enter email body.");
         WebElement body = (new WebDriverWait(driver, 10))
@@ -94,48 +97,23 @@ public class SendEmailStep {
         body.click();
         body.sendKeys("Hey! I have included an image attachment.");
         System.out.println("Email body set");
-
-        //click on send email
-        System.out.println("Attempting to send the email.");
-        WebElement send = (new WebDriverWait(driver, 10))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[26]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[2]/td[1]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]")));
-        send.click();
-        System.out.println("Email sent");
-
-//        btn.click();
-//        WebDriverWait wait = new WebDriverWait(driver, 20);   // implement wait here to load all data.
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("to")));
-//        //set recipient email
-//        driver.findElement(By.name("to")).sendKeys("jochampion17@gmail.com");
-//
-//        //set message body
-//        driver.findElement(By.id(":9c")).click();
-//        driver.findElement(By.id(":9c")).sendKeys("Hey! I have included an image attachment. ");
-//
-//        //add an attachment
-//        driver.findElement(By.id(":9p")).click();
-//
-//        //click on send email
-//        driver.findElement(By.id(":7x")).click();
-//        Thread.sleep(8000);  // Apply wait for sending mail
-//        driver.close();
-
-
     }
-
 
 
     @And("userA clicks on attach")
     public void usera_clicks_on_attach() {
-
 
     }
 
 
     @Then("userA is able to send an email with an attached image by clicking on Send")
     public void usera_is_able_to_send_an_email_with_an_attached_image_by_clicking_on_Send() {
-
-
+        //click on send email
+        System.out.println("Attempting to send the email.");
+        WebElement send = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[26]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[2]/td[1]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]")));
+        send.click();
+        System.out.println("Email sent");
     }
 
     @When("userA clicks on log out")

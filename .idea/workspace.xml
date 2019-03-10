@@ -4,7 +4,7 @@
     <list default="true" id="d375f9c4-f671-42d6-8050-f410d0abcce5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/seleniumgluecode/SendEmailStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/seleniumgluecode/SendEmailStep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/seleniumgluecode/SendEmailStep.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/seleniumgluecode/SendEmailStep.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/SendEmail.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/SendEmail.feature" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,14 +30,23 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/seleniumgluecode/SendEmailStep.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="102" column="41" lean-forward="true" selection-start-line="102" selection-start-column="41" selection-end-line="102" selection-end-column="41" />
+            <state relative-caret-position="193">
+              <caret line="99" column="5" lean-forward="true" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2393#2394#0" expanded="true" />
                 <element signature="e#2454#2455#0" expanded="true" />
-                <element signature="e#6422#6423#0" expanded="true" />
+                <element signature="e#5748#5749#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/SendEmail.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -62,9 +71,16 @@
         <option value="$PROJECT_DIR$/src/test/java/Gmail/Gmail.java" />
         <option value="$PROJECT_DIR$/src/test/java/GmailPackage/Gmail.java" />
         <option value="$PROJECT_DIR$/src/test/java/runner/testrunner.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/SendEmail.feature" />
         <option value="$PROJECT_DIR$/src/test/java/seleniumgluecode/SendEmailStep.java" />
       </list>
     </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1280" />
@@ -135,8 +151,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552185409045" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552193223438" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -206,9 +222,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Feature__SendEmail - 2019.03.09 at 21h 10m 24s.xml">
-      <configuration name="Feature: SendEmail" configurationId="CucumberJavaRunConfigurationType" />
-    </history-entry>
     <history-entry file="Feature__SendEmail - 2019.03.09 at 21h 11m 37s.xml">
       <configuration name="Feature: SendEmail" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
@@ -236,9 +249,12 @@
     <history-entry file="Feature__SendEmail - 2019.03.09 at 21h 34m 36s.xml">
       <configuration name="Feature: SendEmail" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
+    <history-entry file="Feature__SendEmail - 2019.03.09 at 23h 36m 49s.xml">
+      <configuration name="Feature: SendEmail" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15812000" />
+    <option name="totallyTimeSpent" value="16447000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -249,7 +265,7 @@
       <window_info id="Capture Tool" />
       <window_info id="UI Designer" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.37318256" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.37318256" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" sideWeight="0.74878836" weight="0.32876712" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
@@ -260,7 +276,7 @@
       <window_info anchor="bottom" id="Messages" weight="0.32876712" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.80048466" visible="true" weight="0.37945205" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.80048466" visible="true" weight="0.37945205" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -284,25 +300,9 @@
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/GmailPackage/Gmail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8">
-          <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/GmailPackage/Gmail.java" />
     <entry file="file://$PROJECT_DIR$/CucumberAgileStoryTestAutomation.iml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/SendEmail.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/runner/testrunner.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -314,15 +314,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/SendEmail.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/seleniumgluecode/SendEmailStep.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="102" column="41" lean-forward="true" selection-start-line="102" selection-start-column="41" selection-end-line="102" selection-end-column="41" />
+        <state relative-caret-position="193">
+          <caret line="99" column="5" lean-forward="true" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2393#2394#0" expanded="true" />
             <element signature="e#2454#2455#0" expanded="true" />
-            <element signature="e#6422#6423#0" expanded="true" />
+            <element signature="e#5748#5749#0" expanded="true" />
           </folding>
         </state>
       </provider>
