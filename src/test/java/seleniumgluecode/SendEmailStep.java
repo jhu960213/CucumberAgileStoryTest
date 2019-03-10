@@ -10,14 +10,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.SystemClock;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
-import java.io.File;
-import java.io.IOException;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class SendEmailStep {
 
@@ -33,22 +27,16 @@ public class SendEmailStep {
 
     // user A scenario
 
-    @Given("userA is on homepage")
-    public void usera_is_on_homepage() throws InterruptedException {
-       // System.setProperty("webdriver.chrome.driver", "/Users/jhu69/Desktop/Winter_2019/ECSE_428/CucumberAgileStoryTest/chromedriver");
-
+    @Given("I am on the loginpage")
+    public void i_am_on_the_loginpage() throws InterruptedException {
+        // System.setProperty("webdriver.chrome.driver", "/Users/jhu69/Desktop/Winter_2019/ECSE_428/CucumberAgileStoryTest/chromedriver");
         System.setProperty("webdriver.chrome.driver", "/Users/antoine/git/ECSE428CucumberAutomatedTests/CucumberAgileStoryTest/chromedriver");
         driver = new ChromeDriver();
         driver.navigate().to("https://mail.google.com/");
     }
 
-    @When("userA navigates to login page")
-    public void usera_navigates_to_login_page() {
-        // driver.findElement(By.linkText("Sign in")).click();
-    }
-
-    @And("userA enters username and password")
-    public void usera_enters_username_and_password() throws InterruptedException {
+    @And("I enter username and password")
+    public void i_enter_username_and_password() throws InterruptedException {
         //set the email
         System.out.println("Attempting to enter email to login.");
         WebElement email = (new WebDriverWait(driver, 10))
@@ -74,13 +62,8 @@ public class SendEmailStep {
         System.out.println("Password entered and user logged in");
     }
 
-    @Then("userA is logged into email homepage")
-    public void usera_is_logged_into_email_homepage() {
-        System.out.println("Successfully logged in!");
-    }
-
-    @When("userA clicks on New message")
-    public void usera_clicks_on_New_message() {
+    @When("I click on New message")
+    public void i_click_on_New_message(){
         //click on new message
         System.out.println("Attempting to find the new message button.. ");
         WebElement btn = (new WebDriverWait(driver, 10))
@@ -90,8 +73,8 @@ public class SendEmailStep {
 
     }
 
-    @And("userA enters a desired recipient")
-    public void usera_enters_a_desired_recipient() throws InterruptedException {
+    @When("I enter a desired {string} recipient address")
+    public void i_enter_a_desired_recipient_address(String string) throws InterruptedException {
         //set email recipient
         System.out.println("Attempting to enter email recipient.");
         WebElement btn = (new WebDriverWait(driver, 10))
@@ -100,37 +83,38 @@ public class SendEmailStep {
         System.out.println("Email recipient set");
     }
 
-    @And("userA enters an attachment in body text")
-    public void usera_enters_an_attachment_in_body_text() throws IOException {
-        //set message body
-        try {
-            System.out.println("Attempting to enter email body.");
-            //File file = new File("/Users/Pictures/tim-gouw-124468-unsplash.jpg");
-            WebElement body = (new WebDriverWait(driver, 10))
-                    .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[26]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[1]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[2]/div[1]")));
-            body.click();
-            body.sendKeys("Wusss poppin");
-            //body.sendKeys(file.getCanonicalPath());
-            System.out.println("Email body set");
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
+    @When("I enter a desired {string} in body text")
+    public void i_enter_a_desired_in_body_text(String string) throws InterruptedException {
+        //set email body text
+        System.out.println("Attempting to set body text.");
+        WebElement text = (new WebDriverWait(driver, 20))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[26]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[1]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[2]/div[1]")));
+        text.click();
+        text.sendKeys("Hi! I have inserted an image attachment!");
+        System.out.println("Body text set");
+
+        // find the input element
+        WebElement elem = driver.findElement(By.xpath("//input[@type='file']"));
+        // 'type' the file location to it as it were a usual <input type='text' /> element
+        elem.sendKeys("/Users/antoine/Documents/Pictures/tim-gouw-124468-unsplash.jpg");
+        (new WebDriverWait(driver, 25)).until(ExpectedConditions.elementToBeClickable(By.cssSelector("a.dO")));
     }
 
 
-    @Then("userA is able to send an email with an attached image by clicking on Send")
-    public void usera_is_able_to_send_an_email_with_an_attached_image_by_clicking_on_Send() throws InterruptedException {
+    @Then("I am able to send an email with an attached image by clicking on Send")
+    public void i_am_able_to_send_an_email_with_an_attached_image_by_clicking_on_Send() throws InterruptedException {
         //click on send email
         System.out.println("Attempting to send the email.");
         WebElement send = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[26]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[2]/td[1]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]")));
         send.click();
         System.out.println("Email sent");
+        (new WebDriverWait(driver, 30)).until(ExpectedConditions.presenceOfElementLocated(By.className("aT")));
+
     }
 
-    @When("userA clicks on log out")
-    public void usera_clicks_on_log_out() {
+    @When("I click on log out")
+    public void i_click_on_log_out() {
 
         // clicking on google account button first to collapse what's inside
         System.out.println("Attempting to click on google account button.");
@@ -147,9 +131,8 @@ public class SendEmailStep {
         System.out.println("Sign out button clicked.");
     }
 
-    @Then("userA is logged out of his email account")
-    public void usera_is_logged_out_of_his_email_account() {
+    @Then("I am logged out of my email account")
+    public void i_am_logged_out_of_my_email_account() {
         System.out.println("Successfully logged out!");
     }
 }
-
