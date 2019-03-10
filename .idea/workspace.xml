@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d375f9c4-f671-42d6-8050-f410d0abcce5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/seleniumgluecode/SendEmailStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/seleniumgluecode/SendEmailStep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/SendEmail.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/SendEmail.feature" afterDir="false" />
-    </list>
+    <list default="true" id="d375f9c4-f671-42d6-8050-f410d0abcce5" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,13 +26,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/seleniumgluecode/SendEmailStep.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="105" column="64" selection-start-line="105" selection-start-column="64" selection-end-line="105" selection-end-column="64" />
+            <state relative-caret-position="220">
+              <caret line="106" column="47" lean-forward="true" selection-start-line="101" selection-start-column="10" selection-end-line="106" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2393#2394#0" expanded="true" />
                 <element signature="e#2454#2455#0" expanded="true" />
-                <element signature="e#6256#6257#0" expanded="true" />
+                <element signature="e#6264#6265#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -155,7 +152,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552197883801" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552198224342" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RunDashboard">
@@ -258,11 +255,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19084000" />
+    <option name="totallyTimeSpent" value="19337000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Image Layers" />
@@ -271,7 +267,7 @@
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.37318256" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" sideWeight="0.74878836" weight="0.32876712" />
+      <window_info active="true" anchor="bottom" id="Terminal" sideWeight="0.74878836" visible="true" weight="0.32876712" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" sideWeight="0.19951534" side_tool="true" weight="0.53287673" />
       <window_info anchor="bottom" id="Java Enterprise" />
@@ -280,7 +276,7 @@
       <window_info anchor="bottom" id="Messages" weight="0.32876712" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.80048466" visible="true" weight="0.37945205" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.80048466" weight="0.37945205" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -327,13 +323,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/seleniumgluecode/SendEmailStep.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="105" column="64" selection-start-line="105" selection-start-column="64" selection-end-line="105" selection-end-column="64" />
+        <state relative-caret-position="220">
+          <caret line="106" column="47" lean-forward="true" selection-start-line="101" selection-start-column="10" selection-end-line="106" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2393#2394#0" expanded="true" />
             <element signature="e#2454#2455#0" expanded="true" />
-            <element signature="e#6256#6257#0" expanded="true" />
+            <element signature="e#6264#6265#0" expanded="true" />
           </folding>
         </state>
       </provider>
