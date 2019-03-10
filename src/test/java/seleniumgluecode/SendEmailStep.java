@@ -35,8 +35,8 @@ public class SendEmailStep {
     @Before
     public void setWebDriver(){
         // instantiating web driver object
-        //System.setProperty("webdriver.chrome.driver", "/Users/antoine/git/ECSE428CucumberAutomatedTests/CucumberAgileStoryTest/chromedriver");
-        System.setProperty("webdriver.chrome.driver", "/Users/jhu69/Desktop/Winter_2019/ECSE_428/CucumberAgileStoryTest/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/Users/antoine/git/CucumberAgileStoryTest/chromedriver");
+        //System.setProperty("webdriver.chrome.driver", "/Users/jhu69/Desktop/Winter_2019/ECSE_428/CucumberAgileStoryTest/chromedriver");
         driver = new ChromeDriver();
         driver.navigate().to("https://mail.google.com/");
     }
@@ -145,8 +145,8 @@ public class SendEmailStep {
         WebElement elem = driver.findElement(By.xpath("//input[@type='file']"));
         // 'type' the file location to it as it were a usual <input type='text' /> element
         //elem.sendKeys("/Users/antoine/Documents/Pictures/"+string);
-        elem.sendKeys("/Users/jhu69/Pictures/" + string);
-        (new WebDriverWait(driver, 25)).until(ExpectedConditions.elementToBeClickable(By.cssSelector("a.dO")));
+        elem.sendKeys("/Users/antoine/Documents/Pictures/" + string);
+        (new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(By.cssSelector("a.dO")));
     }
 
 
@@ -157,22 +157,22 @@ public class SendEmailStep {
         WebElement send = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[26]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[2]/td[1]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]")));
         send.click();
+        Thread.sleep(5000);
 
         // (new WebDriverWait(driver, 25)).until(ExpectedConditions.elementToBeClickable(By.cssSelector("a.dO")));
 
         WebElement invalid = (new WebDriverWait(driver, 10))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[40]/div[3]/button[1]")));
+                .until(ExpectedConditions.elementToBeClickable(By.name("ok")));
         invalid.click();
+        Thread.sleep(5000);
 
         // (new WebDriverWait(driver, 25)).until(ExpectedConditions.elementToBeClickable(By.cssSelector("a.dO")));
 
         WebElement garbage = (new WebDriverWait(driver, 10))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[29]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[2]/td[1]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[6]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]")));
-        invalid.click();
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[26]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/img[3]")));
+        garbage.click();
 
-
-        System.out.println("Email sent");
-        (new WebDriverWait(driver, 20)).until(ExpectedConditions.presenceOfElementLocated(By.className("aT")));
+        (new WebDriverWait(driver, 5)).until(ExpectedConditions.presenceOfElementLocated(By.className("aT")));
 
     }
 
