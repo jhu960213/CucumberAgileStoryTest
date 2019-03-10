@@ -33,9 +33,9 @@ public class SendEmailStep {
 
     @Given("userA is on homepage")
     public void usera_is_on_homepage() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "/Users/jhu69/Desktop/Winter_2019/ECSE_428/CucumberAgileStoryTest/chromedriver");
+       // System.setProperty("webdriver.chrome.driver", "/Users/jhu69/Desktop/Winter_2019/ECSE_428/CucumberAgileStoryTest/chromedriver");
 
-        // System.setProperty("webdriver.chrome.driver", "/Users/antoine/git/ECSE428CucumberAutomatedTests/CucumberAgileStoryTest/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/Users/antoine/git/ECSE428CucumberAutomatedTests/CucumberAgileStoryTest/chromedriver");
         driver = new ChromeDriver();
         driver.navigate().to("https://mail.google.com/");
     }
@@ -101,12 +101,12 @@ public class SendEmailStep {
     @And("userA enters an attachment in body text")
     public void usera_enters_an_attachment_in_body_text() {
         //set message body
-//        System.out.println("Attempting to enter email body.");
-//        WebElement body = (new WebDriverWait(driver, 10))
-//                .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[26]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[1]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[2]/div[1]")));
-//        body.click();
-//        body.sendKeys("/Users/sso/the/local/path/to/darkbulb.jpg");
-//        System.out.println("Email body set");
+        System.out.println("Attempting to enter email body.");
+        WebElement body = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[26]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[1]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[2]/div[1]")));
+        body.click();
+        body.sendKeys("/Users/sso/the/local/path/to/darkbulb.jpg");
+        System.out.println("Email body set");
     }
 
 
