@@ -122,7 +122,7 @@ public class SendEmailStep {
     public void usera_is_able_to_send_an_email_with_an_attached_image_by_clicking_on_Send() throws InterruptedException {
         //click on send email
         System.out.println("Attempting to send the email.");
-        WebElement send = (new WebDriverWait(driver, 30, 7000))
+        WebElement send = (new WebDriverWait(driver, 30))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[26]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[2]/td[1]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]")));
         send.click();
         Thread.sleep(8000);
