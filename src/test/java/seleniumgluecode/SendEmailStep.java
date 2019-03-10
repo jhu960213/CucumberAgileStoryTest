@@ -13,7 +13,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -99,14 +100,21 @@ public class SendEmailStep {
     }
 
     @And("userA enters an attachment in body text")
-    public void usera_enters_an_attachment_in_body_text() {
+    public void usera_enters_an_attachment_in_body_text() throws IOException {
         //set message body
-        System.out.println("Attempting to enter email body.");
-        WebElement body = (new WebDriverWait(driver, 10))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[26]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[1]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[2]/div[1]")));
-        body.click();
-        body.sendKeys("/Users/sso/the/local/path/to/darkbulb.jpg");
-        System.out.println("Email body set");
+        try {
+            System.out.println("Attempting to enter email body.");
+            //File file = new File("/Users/Pictures/tim-gouw-124468-unsplash.jpg");
+            WebElement body = (new WebDriverWait(driver, 10))
+                    .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[26]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[1]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[2]/div[1]")));
+            body.click();
+            body.sendKeys("Wusss poppin");
+            //body.sendKeys(file.getCanonicalPath());
+            System.out.println("Email body set");
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
 
