@@ -42,26 +42,34 @@ public class SendEmailStep {
 
     @When("userA navigates to login page")
     public void usera_navigates_to_login_page() {
-       // driver.findElement(By.linkText("Sign in")).click();
+        // driver.findElement(By.linkText("Sign in")).click();
     }
 
     @And("userA enters username and password")
     public void usera_enters_username_and_password() throws InterruptedException {
         //set the email
-        driver.findElement(By.id("identifierId")).sendKeys("jochampion17@gmail.com");
-        driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/content[1]/span[1]")).click();  // Click on next
-        //wait needed here To get the password page.
-        Thread.sleep(1000);
+        System.out.println("Attempting to enter email to login.");
+        WebElement email = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/content[1]/section[1]/div[1]/content[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]")));
+        email.sendKeys("jochampion17@gmail.com");
 
+        //click on next
+        WebElement next = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/content[1]/span[1]")));
+        next.click();
+        System.out.println("Email entered");
 
         //set the password
-        driver.findElement(By.xpath("//*[@id=\"password\"]/div[1]/div/div[1]/input")).sendKeys("ecse428!");  // click on next
-        //driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/content")).click();  //If your page redirect to google security page.
-        System.out.println("Attempting to find the password next button.. ");
+        System.out.println("Attempting to enter password to login.");
+        WebElement password = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/content[1]/section[1]/div[1]/content[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]")));
+        password.sendKeys("ecse428!");
+
+        //click on next
         WebElement btn = (new WebDriverWait(driver, 10))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[1]/div[2]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/content")));
-        System.out.print("Found!\n");
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/content[1]/span[1]")));
         btn.click();
+        System.out.println("Password entered and user logged in");
     }
 
     @Then("userA is logged into email homepage")
@@ -90,21 +98,15 @@ public class SendEmailStep {
         System.out.println("Email recipient set");
     }
 
-    @And("userA enters an email body text")
-    public void usera_enters_an_email_body_text(){
+    @And("userA enters an attachment in body text")
+    public void usera_enters_an_attachment_in_body_text() {
         //set message body
-        System.out.println("Attempting to enter email body.");
-        WebElement body = (new WebDriverWait(driver, 10))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[26]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[1]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[2]/div[1]")));
-        body.click();
-        body.sendKeys("Hey! I have included an image attachment.");
-        System.out.println("Email body set");
-    }
-
-
-    @And("userA clicks on attach")
-    public void usera_clicks_on_attach() {
-
+//        System.out.println("Attempting to enter email body.");
+//        WebElement body = (new WebDriverWait(driver, 10))
+//                .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[26]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[1]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[2]/div[1]")));
+//        body.click();
+//        body.sendKeys("/Users/sso/the/local/path/to/darkbulb.jpg");
+//        System.out.println("Email body set");
     }
 
 
@@ -124,7 +126,7 @@ public class SendEmailStep {
 
         // clicking on google account button first to collapse what's inside
         System.out.println("Attempting to click on google account button.");
-        WebElement account = (new WebDriverWait(driver, 20 ))
+        WebElement account = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[7]/div[3]/div[1]/div[1]/div[4]/header[1]/div[2]/div[3]/div[1]/div[2]/div[1]/a[1]/span[1]")));
         account.click();
         System.out.println("Google account button clicked.");
@@ -141,5 +143,5 @@ public class SendEmailStep {
     public void usera_is_logged_out_of_his_email_account() {
         System.out.println("Successfully logged out!");
     }
-
 }
+
