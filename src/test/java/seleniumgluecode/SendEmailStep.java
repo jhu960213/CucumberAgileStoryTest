@@ -35,7 +35,8 @@ public class SendEmailStep {
     @Before
     public void setWebDriver(){
         // instantiating web driver object
-        System.setProperty("webdriver.chrome.driver", "/Users/antoine/git/ECSE428CucumberAutomatedTests/CucumberAgileStoryTest/chromedriver");
+        //System.setProperty("webdriver.chrome.driver", "/Users/antoine/git/ECSE428CucumberAutomatedTests/CucumberAgileStoryTest/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/Users/jhu69/Desktop/Winter_2019/ECSE_428/CucumberAgileStoryTest/chromedriver");
         driver = new ChromeDriver();
         driver.navigate().to("https://mail.google.com/");
     }
@@ -109,8 +110,13 @@ public class SendEmailStep {
         //set email recipient
         System.out.println("Attempting to enter CC email recipient.");
         WebElement btn = (new WebDriverWait(driver, 10))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[26]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[2]/form[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/span[1]/span[1]/span[1]")));
-        btn.sendKeys(string + Keys.ENTER);
+                .until(ExpectedConditions.elementToBeClickable(By.cssSelector("span[aria-label='Add Cc recipients \u202A(⌘⇧C)\u202C']")));
+        btn.click();
+
+        WebElement cc = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.elementToBeClickable(By.name("cc")));
+        cc.click();
+        cc.sendKeys(string + Keys.ENTER);
         System.out.println("CC Email recipient set");
     }
 
@@ -121,7 +127,7 @@ public class SendEmailStep {
         WebElement btn = (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.elementToBeClickable(By.name("to")));
         btn.sendKeys(string + Keys.ENTER);
-        System.out.println("Email recipient set");
+        System.out.println("Email invalid recipient set");
     }
 
 
@@ -138,7 +144,8 @@ public class SendEmailStep {
         // find the input element
         WebElement elem = driver.findElement(By.xpath("//input[@type='file']"));
         // 'type' the file location to it as it were a usual <input type='text' /> element
-        elem.sendKeys("/Users/antoine/Documents/Pictures/"+string);
+        //elem.sendKeys("/Users/antoine/Documents/Pictures/"+string);
+        elem.sendKeys("/Users/jhu69/Pictures/" + string);
         (new WebDriverWait(driver, 25)).until(ExpectedConditions.elementToBeClickable(By.cssSelector("a.dO")));
     }
 
@@ -150,6 +157,20 @@ public class SendEmailStep {
         WebElement send = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[26]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[2]/td[1]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]")));
         send.click();
+
+        // (new WebDriverWait(driver, 25)).until(ExpectedConditions.elementToBeClickable(By.cssSelector("a.dO")));
+
+        WebElement invalid = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[40]/div[3]/button[1]")));
+        invalid.click();
+
+        // (new WebDriverWait(driver, 25)).until(ExpectedConditions.elementToBeClickable(By.cssSelector("a.dO")));
+
+        WebElement garbage = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[29]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[2]/td[1]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[6]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]")));
+        invalid.click();
+
+
         System.out.println("Email sent");
         (new WebDriverWait(driver, 20)).until(ExpectedConditions.presenceOfElementLocated(By.className("aT")));
 
