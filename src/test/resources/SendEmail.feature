@@ -14,11 +14,10 @@ Feature: Send email with an image attachment
       | email                    | attachment |
       | jochampion17@gmail.com   | 1.jpg      |
       | jingxujaster@hotmail.com | 2.jpg      |
-##      | jackjingxu@yahoo.com     | 3.jpg      |
-##      | abc@gmail.com            | 4.jpg      |
-##      | bbc@gmail.com            | 5.jpg      |
-#
-#
+      | jackjingxu@yahoo.com     | 3.jpg      |
+      | abc@gmail.com            | 4.jpg      |
+      | bbc@gmail.com            | 5.jpg      |
+
 
    #Alternate FLow
   Scenario Outline: An authenticated user logs in to send an email with
@@ -37,11 +36,11 @@ Feature: Send email with an image attachment
       | email                    |               ccemail           | attachment |
       | jochampion17@gmail.com   |     jingxujaster@hotmail.com    |  1.jpg     |
       | jingxujaster@hotmail.com |        jochampion17@gmail.com   |  2.jpg     |
-##      | jackjingxu@yahoo.com     |        jingxujaster@hotmail.com | 3.jpg      |
-##      | abc@gmail.com            |      jingxujaster@hotmail.com   |  4.jpg     |
-##      | bbc@gmail.com            |       jingxujaster@hotmail.com  | 5.jpg      |
-#
-#
+      | jackjingxu@yahoo.com     |        jingxujaster@hotmail.com | 3.jpg      |
+      | abc@gmail.com            |      jingxujaster@hotmail.com   |  4.jpg     |
+      | bbc@gmail.com            |       jingxujaster@hotmail.com  | 5.jpg      |
+
+
 
     #Error Flow
   Scenario Outline: An authenticated user logs in to send an email with
@@ -57,7 +56,7 @@ Feature: Send email with an image attachment
     Examples:
       | email                   | attachment |
       | jlkds                   | 1.jpg      |
-#      | jingter sdsf             | 2.jpg      |
-#      | jakjixu                 | 3.jpg      |
-#      | bc                      | 4.jpg      |
-#      | bb@g                    | 5.jpg      |
+      | jingter sdsf             | 2.jpg      |
+      | jakjixu                 | 3.jpg      |
+      | bc                      | 4.jpg      |
+      | bb@g                    | 5.jpg      |

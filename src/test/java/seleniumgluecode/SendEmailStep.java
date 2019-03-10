@@ -35,6 +35,8 @@ public class SendEmailStep {
     @Before
     public void setWebDriver(){
         // instantiating web driver object
+
+        // need to make sure that its your local path directory
         System.setProperty("webdriver.chrome.driver", "/Users/antoine/git/CucumberAgileStoryTest/chromedriver");
         //System.setProperty("webdriver.chrome.driver", "/Users/jhu69/Desktop/Winter_2019/ECSE_428/CucumberAgileStoryTest/chromedriver");
         driver = new ChromeDriver();
