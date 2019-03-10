@@ -78,8 +78,8 @@ public class SendEmailStep {
         driver.quit();
     }
 
-    @Given("^I am logged into an email account$")
-    public void i_am_logged_into_an_email_account(){
+    @Given("^I am logged into a Gmail account$")
+    public void i_am_logged_into_a_Gmail_account(){
         System.out.println("I am logged in");
     }
 
@@ -107,12 +107,23 @@ public class SendEmailStep {
     @And("^I enter \"([^\"]*)\" as recipient CC$")
     public void i_enter_a_desired_recipientCC_address(String string) throws InterruptedException {
         //set email recipient
-        System.out.println("Attempting to enter email recipient.");
+        System.out.println("Attempting to enter CC email recipient.");
+        WebElement btn = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[26]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[2]/form[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/span[1]/span[1]/span[1]")));
+        btn.sendKeys(string + Keys.ENTER);
+        System.out.println("CC Email recipient set");
+    }
+
+    @And("^I enter \"([^\"]*)\" as invalid recipient address$")
+    public void i_enter_an_invalid_recipient_address(String string) throws InterruptedException {
+        //set invalid email recipient
+        System.out.println("Attempting to enter invalid email recipient.");
         WebElement btn = (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.elementToBeClickable(By.name("to")));
         btn.sendKeys(string + Keys.ENTER);
         System.out.println("Email recipient set");
     }
+
 
     @And("^I enter \"([^\"]*)\" as the file in body text$")
     public void i_enter_a_desired_in_body_text(String string) throws InterruptedException {
@@ -140,7 +151,7 @@ public class SendEmailStep {
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[26]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[2]/td[1]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]")));
         send.click();
         System.out.println("Email sent");
-       (new WebDriverWait(driver, 20)).until(ExpectedConditions.presenceOfElementLocated(By.className("aT")));
+        (new WebDriverWait(driver, 20)).until(ExpectedConditions.presenceOfElementLocated(By.className("aT")));
 
     }
 

@@ -1,12 +1,9 @@
+Feature: Send email with an image attachment
 
+  #Normal Scenario
+  Scenario Outline: Send email with an image attachment
 
-Feature: Send Email Feature
-  Verify if user is able to send an email to various recipients with an attached image of choice
-
-  Scenario Outline: An authenticated user logs in to send multiple emails with
-  attached images to different recipients then logs out
-
-    Given I am logged into an email account
+    Given I am logged into a Gmail account
     When I click on New message
     And I enter "<email>" as recipient address
     And I enter "<attachment>" as the file in body text
@@ -27,7 +24,7 @@ Feature: Send Email Feature
   Scenario Outline: An authenticated user logs in to send an email with
   attached image to 2 different recipients then logs out
 
-    Given I am logged into an email account
+    Given I am logged into a Gmail account
     When I click on New message
     And I enter "<email>" as recipient address
     And I enter "<ccemail>" as recipient CC
@@ -50,7 +47,7 @@ Feature: Send Email Feature
   Scenario Outline: An authenticated user logs in to send an email with
   attached image to 2 different recipients then logs out
 
-    Given I am logged into an email account
+    Given I am logged into a Gmail account
     When I click on New message
     And I enter "<email>" as invalid recipient address
     And I enter "<attachment>" as the file in body text
@@ -64,5 +61,3 @@ Feature: Send Email Feature
       | jackjingxu@yaho          | 3.jpg      |
       | abc@gmail                | 4.jpg      |
       | bbc@gmail                | 5.jpg      |
-
-
