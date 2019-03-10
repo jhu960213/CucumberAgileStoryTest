@@ -4,18 +4,14 @@ Feature: Send Email Feature
   Verify if user is able to send an email to various recipients with an attached image of choice
 
   Scenario Outline: An authenticated user logs in to send multiple emails with
-            attached images to different recipients then logs out
+  attached images to different recipients then logs out
 
-    Given I am on the homepage
-    When I navigate to login page
-    And I enter username and password
-    Then I am logged into email homepage
+    Given I am logged into an email account
     When I click on New message
-    And I enter a desired "<email>" recipient address
-    And I enter a desired "<attachment>" in body text
-    Then I am able to send an email with an attached image by clicking on Send
-    When I click on log out
-    Then I am logged out of my email account
+    And I enter "<email>" as recipient address
+    And I enter "<attachment>" as the file in body text
+    And I click on send
+    Then I have sent an email with an attachment to the proper recipient
 
     Examples:
       | email                    | attachment |
