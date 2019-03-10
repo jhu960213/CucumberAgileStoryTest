@@ -104,6 +104,16 @@ public class SendEmailStep {
         System.out.println("Email recipient set");
     }
 
+    @And("^I enter \"([^\"]*)\" as recipient CC$")
+    public void i_enter_a_desired_recipientCC_address(String string) throws InterruptedException {
+        //set email recipient
+        System.out.println("Attempting to enter email recipient.");
+        WebElement btn = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.elementToBeClickable(By.name("to")));
+        btn.sendKeys(string + Keys.ENTER);
+        System.out.println("Email recipient set");
+    }
+
     @And("^I enter \"([^\"]*)\" as the file in body text$")
     public void i_enter_a_desired_in_body_text(String string) throws InterruptedException {
         //set email body text
