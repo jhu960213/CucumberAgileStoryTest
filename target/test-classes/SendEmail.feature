@@ -12,6 +12,7 @@ Feature: Send Email Feature
     Then userA is logged into email homepage
     When userA clicks on New message
     And userA enters a desired recipient
+    And userA enters an email body text
     And userA clicks on attach
     Then userA is able to send an email with an attached image by clicking on Send
     When userA clicks on log out
