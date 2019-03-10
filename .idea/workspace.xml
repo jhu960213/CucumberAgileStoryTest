@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d375f9c4-f671-42d6-8050-f410d0abcce5" name="Default Changelist" comment="" />
+    <list default="true" id="d375f9c4-f671-42d6-8050-f410d0abcce5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/seleniumgluecode/SendEmailStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/seleniumgluecode/SendEmailStep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/seleniumgluecode/SendEmailStep.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/seleniumgluecode/SendEmailStep.class" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,13 +15,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/runner/testrunner.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
               <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/seleniumgluecode/SendEmailStep.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="102" column="41" lean-forward="true" selection-start-line="102" selection-start-column="41" selection-end-line="102" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2393#2394#0" expanded="true" />
+                <element signature="e#2454#2455#0" expanded="true" />
+                <element signature="e#6422#6423#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -116,7 +135,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552174732857" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552185409045" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -181,47 +201,48 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552162218583</updated>
-      <workItem from="1552162222682" duration="9759000" />
+      <workItem from="1552162222682" duration="15812000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Feature__SendEmail - 2019.03.09 at 18h 04m 15s.xml">
+    <history-entry file="Feature__SendEmail - 2019.03.09 at 21h 10m 24s.xml">
       <configuration name="Feature: SendEmail" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Feature__SendEmail - 2019.03.09 at 18h 04m 41s.xml">
+    <history-entry file="Feature__SendEmail - 2019.03.09 at 21h 11m 37s.xml">
       <configuration name="Feature: SendEmail" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Feature__SendEmail - 2019.03.09 at 18h 05m 12s.xml">
+    <history-entry file="Feature__SendEmail - 2019.03.09 at 21h 12m 50s.xml">
       <configuration name="Feature: SendEmail" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Feature__SendEmail - 2019.03.09 at 18h 06m 04s.xml">
+    <history-entry file="Feature__SendEmail - 2019.03.09 at 21h 13m 58s.xml">
       <configuration name="Feature: SendEmail" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Feature__SendEmail - 2019.03.09 at 18h 06m 31s.xml">
+    <history-entry file="Feature__SendEmail - 2019.03.09 at 21h 18m 15s.xml">
       <configuration name="Feature: SendEmail" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Feature__SendEmail - 2019.03.09 at 18h 07m 05s.xml">
+    <history-entry file="Feature__SendEmail - 2019.03.09 at 21h 25m 08s.xml">
       <configuration name="Feature: SendEmail" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Feature__SendEmail - 2019.03.09 at 18h 07m 38s.xml">
+    <history-entry file="Feature__SendEmail - 2019.03.09 at 21h 29m 38s.xml">
       <configuration name="Feature: SendEmail" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Feature__SendEmail - 2019.03.09 at 18h 08m 20s.xml">
+    <history-entry file="Feature__SendEmail - 2019.03.09 at 21h 32m 26s.xml">
       <configuration name="Feature: SendEmail" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Feature__SendEmail - 2019.03.09 at 18h 08m 47s.xml">
+    <history-entry file="Feature__SendEmail - 2019.03.09 at 21h 33m 42s.xml">
       <configuration name="Feature: SendEmail" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Feature__SendEmail - 2019.03.09 at 18h 09m 25s.xml">
+    <history-entry file="Feature__SendEmail - 2019.03.09 at 21h 34m 36s.xml">
       <configuration name="Feature: SendEmail" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9759000" />
+    <option name="totallyTimeSpent" value="15812000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Image Layers" />
@@ -230,16 +251,16 @@
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.37318256" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" sideWeight="0.7495961" visible="true" weight="0.32876712" />
+      <window_info anchor="bottom" id="Terminal" sideWeight="0.74878836" weight="0.32876712" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.25040388" side_tool="true" visible="true" weight="0.32876712" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.19951534" side_tool="true" weight="0.53287673" />
       <window_info anchor="bottom" id="Java Enterprise" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Messages" weight="0.32876712" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" weight="0.5027397" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.80048466" visible="true" weight="0.37945205" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -276,18 +297,6 @@
     <entry file="file://$PROJECT_DIR$/CucumberAgileStoryTestAutomation.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/seleniumgluecode/SendEmailStep.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="55" column="27" lean-forward="true" selection-end-line="123" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2393#2394#0" expanded="true" />
-            <element signature="e#2454#2455#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/SendEmail.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -301,6 +310,19 @@
           <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/seleniumgluecode/SendEmailStep.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="102" column="41" lean-forward="true" selection-start-line="102" selection-start-column="41" selection-end-line="102" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2393#2394#0" expanded="true" />
+            <element signature="e#2454#2455#0" expanded="true" />
+            <element signature="e#6422#6423#0" expanded="true" />
           </folding>
         </state>
       </provider>

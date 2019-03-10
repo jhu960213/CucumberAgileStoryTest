@@ -5,6 +5,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -46,14 +47,19 @@ public class SendEmailStep {
     public void usera_enters_username_and_password() throws InterruptedException {
         //set the email
         driver.findElement(By.id("identifierId")).sendKeys("jochampion17@gmail.com");
-        driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/content/span")).click();  // Click on next
-        Thread.sleep(1000);  //wait needed here To get the password page.
+        driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/content[1]/span[1]")).click();  // Click on next
+        //wait needed here To get the password page.
+        Thread.sleep(1000);
 
 
         //set the password
         driver.findElement(By.xpath("//*[@id=\"password\"]/div[1]/div/div[1]/input")).sendKeys("ecse428!");  // click on next
-        driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/content")).click();  //If your page redirect to google security page.
-        Thread.sleep(2000);
+        //driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/content")).click();  //If your page redirect to google security page.
+        System.out.println("Attempting to find the password next button.. ");
+        WebElement btn = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[1]/div[2]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/content")));
+        System.out.print("Found!\n");
+        btn.click();
     }
 
     @Then("userA is logged into email homepage")
@@ -64,26 +70,53 @@ public class SendEmailStep {
     @When("userA clicks on New message")
     public void usera_clicks_on_New_message() {
         //click on new message
-        driver.findElement(By.xpath("/html/body/div[7]/div[3]/div/div[2]/div[1]/div[1]/div[1]/div[2]/div/div/div/div[1]/div/div")).click();
+        System.out.println("Attempting to find the new message button.. ");
+        WebElement btn = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[7]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]")));
+        System.out.print("Found!\n");
+        btn.click();
 
     }
 
     @And("userA enters a desired recipient")
     public void usera_enters_a_desired_recipient() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, 20);   // implement wait here to load all data.
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("to")));
-        //set recipient email
-        driver.findElement(By.name("to")).sendKeys("jochampion17@gmail.com");
+        //set email recipient
+        System.out.println("Attempting to enter email recipient.");
+        WebElement btn = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.elementToBeClickable(By.name("to")));
+        btn.sendKeys("jochampion17@gmail.com" + Keys.ENTER);
+        System.out.println("Email recipient set");
 
         //set message body
-        driver.findElement(By.id(":9c")).click();
-        driver.findElement(By.id(":9c")).sendKeys("Hey! I have included an image attachment. ");
-
-        //add an attachment
-        driver.findElement(By.id(":9p")).click();
+        System.out.println("Attempting to enter email body.");
+        WebElement body = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[26]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[1]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[2]/div[1]")));
+        body.click();
+        body.sendKeys("Hey! I have included an image attachment.");
+        System.out.println("Email body set");
 
         //click on send email
-        driver.findElement(By.id(":7x")).click();
+        System.out.println("Attempting to send the email.");
+        WebElement send = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[26]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[2]/td[1]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]")));
+        send.click();
+        System.out.println("Email sent");
+
+//        btn.click();
+//        WebDriverWait wait = new WebDriverWait(driver, 20);   // implement wait here to load all data.
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("to")));
+//        //set recipient email
+//        driver.findElement(By.name("to")).sendKeys("jochampion17@gmail.com");
+//
+//        //set message body
+//        driver.findElement(By.id(":9c")).click();
+//        driver.findElement(By.id(":9c")).sendKeys("Hey! I have included an image attachment. ");
+//
+//        //add an attachment
+//        driver.findElement(By.id(":9p")).click();
+//
+//        //click on send email
+//        driver.findElement(By.id(":7x")).click();
 //        Thread.sleep(8000);  // Apply wait for sending mail
 //        driver.close();
 
@@ -118,6 +151,18 @@ public class SendEmailStep {
         System.out.println("Successfully logged out!");
     }
 
+
+    public void waitForVisible(WebDriver aDriver, WebElement element){
+        try{
+            Thread.sleep(1000);
+            System.out.println("Waiting for element visibility");
+            WebDriverWait wait = new WebDriverWait(aDriver, 15);
+            wait.until(ExpectedConditions.visibilityOf(element));
+        }
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 }
