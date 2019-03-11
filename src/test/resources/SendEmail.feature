@@ -56,7 +56,7 @@ Feature: Send email with an image attachment
     Examples:
       | email                   | attachment |
       | jlkds                   | 1.jpg      |
-      | jingter sdsf             | 2.jpg      |
+      | jingter sdsf            | 2.jpg      |
       | jakjixu                 | 3.jpg      |
       | bc                      | 4.jpg      |
       | bb@g                    | 5.jpg      |

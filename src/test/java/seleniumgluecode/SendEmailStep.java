@@ -15,7 +15,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.List;
 
 
 public class SendEmailStep {
@@ -159,23 +158,16 @@ public class SendEmailStep {
         WebElement send = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[26]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[2]/table[1]/tbody[1]/tr[2]/td[1]/div[1]/div[1]/div[4]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]")));
         send.click();
-        Thread.sleep(5000);
-
-        // (new WebDriverWait(driver, 25)).until(ExpectedConditions.elementToBeClickable(By.cssSelector("a.dO")));
-
+        //Thread.sleep(5000);
         WebElement invalid = (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.elementToBeClickable(By.name("ok")));
         invalid.click();
-        Thread.sleep(5000);
-
-        // (new WebDriverWait(driver, 25)).until(ExpectedConditions.elementToBeClickable(By.cssSelector("a.dO")));
-
+        //Thread.sleep(5000);
         WebElement garbage = (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[26]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/img[3]")));
         garbage.click();
 
         (new WebDriverWait(driver, 5)).until(ExpectedConditions.presenceOfElementLocated(By.className("aT")));
-
     }
 
     @Then("^I have sent an email with an attachment to the proper recipient$")
